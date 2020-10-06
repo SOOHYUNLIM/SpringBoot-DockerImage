@@ -3,7 +3,7 @@
 #
 #JAR_NAME=$(ls $REPOSITORY/ | tail -n 1)
 #
-echo "========START SCRIPT========"
+echo "> ========START SCRIPT========"
 #
 #java -jar $REPOSITORY/$JAR_NAME
 
