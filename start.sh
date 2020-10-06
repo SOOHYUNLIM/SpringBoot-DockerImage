@@ -6,4 +6,4 @@
 #
 #java -jar $REPOSITORY/$JAR_NAME
 
-java -jar /home/ec2-user/build/build/libs/demo-0.0.1-SNAPSHOT.jar
+java -jar /home/ec2-user/build/demo-0.0.1-SNAPSHOT.jar
