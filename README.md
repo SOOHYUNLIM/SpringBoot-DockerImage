@@ -1,6 +1,3 @@
 # Demo-SpringBoot
 
-CI - CD 연습..
-
-
-xxxx
+CI - CD 연습
