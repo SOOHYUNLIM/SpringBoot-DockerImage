@@ -1,4 +1,4 @@
-REPOSITORY=/home/ec2-user/build/build/libs/*jar
+REPOSITORY=/home/ec2-user/build/build/libs
 
 JAR_NAME=$(ls $REPOSITORY/ | tail -n 1)
 
