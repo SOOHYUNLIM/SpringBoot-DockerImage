@@ -12,7 +12,7 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: start.sh
+    - location: /home/ec2-user/build/start.sh
       timeout: 60
       runas: ec2-user
 
