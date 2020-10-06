@@ -1,12 +1,12 @@
 version: 0.0
 os: linux
 files:
-  - source:  /
+  - source:  /build/libs/*.jar
     destination: /home/ec2-user/build/
     overwrite: yes
 
 hooks:
   ApplicationStart:
-    - location: /home/ec2-user/build/start.sh
+    - location: start.sh
       timeout: 60
       runas: ec2-user
