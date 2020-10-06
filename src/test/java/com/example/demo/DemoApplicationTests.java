@@ -9,6 +9,5 @@ class DemoApplicationTests {
 
     @Test
     void contextLoads() {
-        Assertions.assertEquals(0, 0);
     }
 }
