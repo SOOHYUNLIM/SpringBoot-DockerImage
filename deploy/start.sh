@@ -20,4 +20,4 @@ else
 fi
 
 echo "> 새 어플리케이션 배포: $DEPLOY_PATH/$JAR_NAME"
-nohup java -jar $DEPLOY_PATH/$JAR_NAME &
+nohup java -jar $DEPLOY_PATH/$JAR_NAME > /dev/null 2> /dev/null < /dev/null &
