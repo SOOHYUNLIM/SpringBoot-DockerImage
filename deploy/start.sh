@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sleep 10
 DEPLOY_PATH=/home/ec2-user/build
 BUILD_JAR=$(ls $DEPLOY_PATH/*.jar)
 
