@@ -6,7 +6,6 @@ BUILD_JAR=$(ls $DEPLOY_PATH/*.jar)
 JAR_NAME=$(basename $BUILD_JAR)
 echo "> build 파일명: $JAR_NAME"
 
-
 CURRENT_PID=$(pgrep -f $JAR_NAME)
 echo "> 현재 실행중인 애플리케이션 pid 확인"
 
