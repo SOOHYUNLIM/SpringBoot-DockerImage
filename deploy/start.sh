@@ -9,6 +9,9 @@ echo "> build 파일명: $JAR_NAME"
 CURRENT_PID=$(pgrep -f $JAR_NAME)
 echo "> 현재 실행중인 애플리케이션 pid 확인"
 
+
+ java -jar $DEPLOY_PATH/$JAR_NAME
+
 if [ -z $CURRENT_PID ]
 then
   echo "> 현재 구동중인 애플리케이션이 없습니다."
