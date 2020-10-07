@@ -1,7 +1,9 @@
 #!/bin/bash
 sleep 10
 
+echo "> 배포 시작......"
 java - jar /home/ec2-user/build/demo-0.0.1-SNAPSHOT.jar
+
 #
 #DEPLOY_PATH=/home/ec2-user/build
 #BUILD_JAR=$(ls $DEPLOY_PATH/*.jar)
