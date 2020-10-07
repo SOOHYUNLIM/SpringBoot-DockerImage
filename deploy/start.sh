@@ -3,6 +3,7 @@
 DEPLOY_PATH=/home/ec2-user/build
 BUILD_JAR=$(ls $DEPLOY_PATH/*.jar)
 JAR_NAME=$(basename $BUILD_JAR)
+
 echo "> build 파일명: $JAR_NAME"
 
 echo "> 현재 실행중인 애플리케이션 pid 확인"
@@ -17,6 +18,5 @@ else
   sleep 5
 fi
 
-DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
-echo "> DEPLOY_JAR 배포"
-nohup java -jar $DEPLOY_JAR &
+echo "> 새 어플리케이션 배포"
+nohup java -jar $DEPLOY_PATH/$JAR_NAME &
