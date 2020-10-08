@@ -45,7 +45,7 @@ echo "> 새 어플리케이션 배포($IDLE_PROFILE): $DEPLOY_PATH/$JAR_NAME"
 nohup java -jar -Dspring.profiles.active=$IDLE_PROFILE $DEPLOY_PATH/$JAR_NAME > /dev/null 2> /dev/null < /dev/null &
 
 echo "> $IDLE_PROFILE 10초 후 Health check 시작"
-echo "> curl -s http://localhost:$IDLE_PORT/health "
+echo "> curl -s http://localhost:$IDLE_PORT/actuator/health "
 sleep 10
 
 for retry_count in {1..10}
