@@ -26,8 +26,8 @@ else
   IDLE_PORT=8081
 fi
 
-
-CURRENT_PID=$(pgrep -f $JAR_NAME)
+IDLE_APPLICATION=$IDLE_PROFILE-$JAR_NAME
+CURRENT_PID=$(pgrep -f $IDLE_APPLICATION)
 echo "> 현재 실행중인 애플리케이션 pid 확인"
 
 if [ -z $CURRENT_PID ]
