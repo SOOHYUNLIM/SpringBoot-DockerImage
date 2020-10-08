@@ -1,1 +1,10 @@
+spring:
+  profiles: blue
+server:
+  port: 8081
 
+---
+spring:
+  profiles: grean
+server:
+  port: 8082
