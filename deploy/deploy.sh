@@ -13,11 +13,11 @@ echo "> 현재 구동중인 Service 확인: $CURRENT_PROFILE"
 
 if [ $CURRENT_PROFILE == blue ]
 then
-  IDLE_PROFILE=set2
+  IDLE_PROFILE=grean
   IDLE_PORT=8082
 elif [ $CURRENT_PROFILE == grean ]
 then
-  IDLE_PROFILE=set1
+  IDLE_PROFILE=blue
   IDLE_PORT=8081
 else
   echo "> 일치하는 Profile이 없습니다. Profile: $CURRENT_PROFILE"
