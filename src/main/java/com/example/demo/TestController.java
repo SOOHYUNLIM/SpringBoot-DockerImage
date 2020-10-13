@@ -16,7 +16,7 @@ public class TestController {
     @GetMapping("/profile")
     public String getProfile () {
         return Arrays.stream(env.getActiveProfiles())
-                .findFirst()sss
+                .findFirst()
                 .orElse("");
     }
 
