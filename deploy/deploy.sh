@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "> 배포 시작......"
 DEPLOY_PATH=/home/ec2-user/build

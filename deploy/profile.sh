@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 새로 만들 Profile 찾기
 function find_idle_profile(){
