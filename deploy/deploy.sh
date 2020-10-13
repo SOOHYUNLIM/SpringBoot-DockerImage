@@ -7,7 +7,6 @@ BUILD_JAR=$(ls $DEPLOY_PATH/*.jar)
 JAR_NAME=$(basename $BUILD_JAR)
 echo "> build 파일명: $JAR_NAME"
 
-
 CURRENT_PROFILE=$(curl -s http://localhost/profile)
 echo "> 현재 구동중인 Service 확인: $CURRENT_PROFILE"
 
