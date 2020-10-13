@@ -1,10 +1,10 @@
 spring:
-  profiles: blue
+  profiles: set1
 server:
   port: 8081
 
 ---
 spring:
-  profiles: grean
+  profiles: set2
 server:
   port: 8082
