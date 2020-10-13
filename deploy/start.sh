@@ -1,25 +1,32 @@
 #!/bin/bash
 
-echo "> 배포 시작......"
-DEPLOY_PATH=/home/ec2-user/build
-BUILD_JAR=$(ls $DEPLOY_PATH/*.jar)
+ABSPATH=$(readlink -f $0)
+ABSDIR=$(dirname $ABSPATH)
+source ${ABSDIR}/profile.sh
 
-JAR_NAME=$(basename $BUILD_JAR)
-echo "> build 파일명: $JAR_NAME"
+REPOSITORY=/home/ec2-user/app/step3
+PROJECT_NAME=springboot-webservice
 
-CURRENT_PID=$(pgrep -f $JAR_NAME)
-echo "> 현재 실행중인 애플리케이션 pid 확인"
+echo "> Build 파일 복사"
+echo "> cp $REPOSITORY/zip/*.jar $REPOSITORY/"
 
-if [ -z $CURRENT_PID ]
-then
-  echo "> 현재 구동중인 애플리케이션이 없습니다."
-else
-  echo "> $CURRENT_PID ...종료!"
-  kill -15 $CURRENT_PID
-  sleep 5
-fi
+cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
-echo "> 새 어플리케이션 배포: $DEPLOY_PATH/$JAR_NAME"
+echo "> 새 애플리케이션 배포"
+JAR_NAME=$(ls -tr $REPOSITORY/*.jar | tail -n 1)
 
-#STDOUT Error 해결 방법: > /dev/null 2> /dev/null < /dev/null 추가 필요
-nohup java -jar $DEPLOY_PATH/$JAR_NAME > /dev/null 2> /dev/null < /dev/null &
+echo "> JAR Name : $JAR_NAME"
+
+echo "> $JAR_NAME 에 실행권한 추가"
+
+chmod +x $JAR_NAME
+
+echo "> $JAR_NAME 실행"
+
+IDLE_PROFILE=$(find_idle_profile)
+
+echo "> $JAR_NAME 를 profile=$IDLE_PROFILE 로 실행합니다."
+
+nohup java -jar \
+  -Dspring.profiles.active=$IDLE_PROFILE \
+  $JAR_NAME  > /dev/null 2> /dev/null < /dev/null &
