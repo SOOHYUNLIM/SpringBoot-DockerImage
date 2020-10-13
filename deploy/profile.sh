@@ -12,7 +12,7 @@ function findNewProfile() {
      CUREENT_PROFILE=$(curl -s http://localhost/profile)
  fi
 
- if [ $(CUREENT_PROFILE) == set1 ]
+ if [ CUREENT_PROFILE == set1 ]
  then
      IDLE_PROFILE=set2
  else
