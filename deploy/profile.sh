@@ -3,6 +3,7 @@
 # 새로 만들 Profile 찾기
 function findNewProfile() {
  RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/profile)
+ CUREENT_PROFILE=null
 
  if [ ${RESPONSE_CODE} -ge 400 ] # 400 보다 크면(즉, 40x/50x 에러 모두 포함)
  then
