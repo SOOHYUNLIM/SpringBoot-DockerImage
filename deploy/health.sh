@@ -5,16 +5,16 @@ ABSDIR=$(dirname $ABSPATH)
 source ${ABSDIR}/profile.sh
 source ${ABSDIR}/switch.sh
 
-IDLE_PORT=$(findPort)
+NEW_PORT=$(findPort)
 
 echo "> Health Check Start!"
-echo "> IDLE_PORT: $IDLE_PORT"
-echo "> curl -s http://localhost:$IDLE_PORT/profile"
+echo "> 새로운 서비스 Port: $NEW_PORT"
+echo "> curl -s http://localhost:$NEW_PORT/profile"
 sleep 10
 
 for RETRY_COUNT in {1..10}
 do
- RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
+ RESPONSE=$(curl -s http://localhost:${NEW_PORT}/profile)
  UP_COUNT=$(echo ${RESPONSE} | grep 'set' | wc -l)
 
  if [ ${UP_COUNT} -ge 1 ]
@@ -30,7 +30,7 @@ do
  if [ ${RETRY_COUNT} -eq 10 ]
  then
    echo "> Health check 실패. "
-   echo "> 엔진엑스에 연결하지 않고 배포를 종료합니다."
+   echo "> Nginx에 연결하지 않고 배포를 종료합니다."
    exit 1
  fi
 
