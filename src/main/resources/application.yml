@@ -2,28 +2,16 @@ spring:
   profiles: default
 server:
   port: 8080
-
-test1:
-  test1: propertise test....
-
-test2:
-  test2: local Test....
-
 ---
 
-  spring:
+spring:
   profiles: set1
 server:
   port: 8081
 
-test2:
-  test2: set1 Test....
 
 ---
 spring:
   profiles: set2
 server:
   port: 8082
-
-test2:
-  test2: set2 Test....
